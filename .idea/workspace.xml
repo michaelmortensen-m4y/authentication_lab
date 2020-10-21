@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53d05ab9-f765-4993-b73c-e8156debe4ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/client" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/server" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -63,7 +61,14 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HelloClient">
+    <configuration name="HelloClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HelloClient" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HelloWorld" />
       <module name="src" />
@@ -73,6 +78,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HelloClient" />
         <item itemvalue="Application.HelloWorld" />
       </list>
     </recent_temporary>
@@ -102,6 +108,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="208" y="25" key="#Project_Structure" timestamp="1603290690108">
@@ -112,10 +119,10 @@
       <screen x="0" y="23" width="1440" height="841" />
     </state>
     <state x="208" y="25" key="SettingsEditor/0.23.1440.841@0.23.1440.841" timestamp="1603290856330" />
-    <state x="88" y="66" key="new project wizard" timestamp="1603291093921">
+    <state x="88" y="66" key="new project wizard" timestamp="1603291853183">
       <screen x="0" y="23" width="1440" height="841" />
     </state>
-    <state x="88" y="66" key="new project wizard/0.23.1440.841@0.23.1440.841" timestamp="1603291093921" />
+    <state x="88" y="66" key="new project wizard/0.23.1440.841@0.23.1440.841" timestamp="1603291853183" />
     <state x="385" y="188" width="670" height="676" key="search.everywhere.popup" timestamp="1603291226785">
       <screen x="0" y="23" width="1440" height="841" />
     </state>
