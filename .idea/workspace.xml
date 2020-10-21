@@ -21,6 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="53d05ab9-f765-4993-b73c-e8156debe4ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Client" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/HelloClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/HelloClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -115,6 +120,30 @@
       <screen x="0" y="23" width="1440" height="841" />
     </state>
     <state x="208" y="25" key="#Project_Structure/0.23.1440.841@0.23.1440.841" timestamp="1603290690108" />
+    <state x="450" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603291905288">
+      <screen x="0" y="23" width="1440" height="841" />
+    </state>
+    <state x="450" y="252" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.841@0.23.1440.841" timestamp="1603291905288" />
+    <state x="533" y="157" key="#com.intellij.ide.util.MemberChooser" timestamp="1603292249700">
+      <screen x="0" y="23" width="1440" height="841" />
+    </state>
+    <state x="533" y="157" key="#com.intellij.ide.util.MemberChooser/0.23.1440.841@0.23.1440.841" timestamp="1603292249700" />
+    <state width="1358" height="205" key="GridCell.Tab.0.bottom" timestamp="1603291888887">
+      <screen x="0" y="23" width="1440" height="841" />
+    </state>
+    <state width="1358" height="205" key="GridCell.Tab.0.bottom/0.23.1440.841@0.23.1440.841" timestamp="1603291888887" />
+    <state width="1358" height="205" key="GridCell.Tab.0.center" timestamp="1603291888886">
+      <screen x="0" y="23" width="1440" height="841" />
+    </state>
+    <state width="1358" height="205" key="GridCell.Tab.0.center/0.23.1440.841@0.23.1440.841" timestamp="1603291888886" />
+    <state width="1358" height="205" key="GridCell.Tab.0.left" timestamp="1603291888885">
+      <screen x="0" y="23" width="1440" height="841" />
+    </state>
+    <state width="1358" height="205" key="GridCell.Tab.0.left/0.23.1440.841@0.23.1440.841" timestamp="1603291888885" />
+    <state width="1358" height="205" key="GridCell.Tab.0.right" timestamp="1603291888886">
+      <screen x="0" y="23" width="1440" height="841" />
+    </state>
+    <state width="1358" height="205" key="GridCell.Tab.0.right/0.23.1440.841@0.23.1440.841" timestamp="1603291888886" />
     <state x="208" y="25" key="SettingsEditor" timestamp="1603290856330">
       <screen x="0" y="23" width="1440" height="841" />
     </state>

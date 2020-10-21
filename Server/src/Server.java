@@ -1,4 +1,3 @@
-/*
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.RemoteException;
@@ -25,4 +24,4 @@ public class Server extends ImplExample {
             e.printStackTrace();
         }
     }
-}*/
+}
