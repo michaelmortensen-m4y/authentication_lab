@@ -10,6 +10,5 @@ public class ConfigTester {
 
         System.out.println(version);
         System.out.println(timezone);
-
     }
 }
