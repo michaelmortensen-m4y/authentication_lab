@@ -29,5 +29,5 @@ public interface IPrinter extends Remote {
     String readConfig(String parameter) throws RemoteException;
 
     // sets the parameter to value
-    void setConfig(String parameter, String value) throws RemoteException;
+    String setConfig(String parameter, String value) throws RemoteException;
 }

@@ -81,11 +81,11 @@ public class Printer implements IPrinter {
 
     @Override
     public String readConfig(String parameter) throws RemoteException {
-        return null;
+        return ConfigHandler.readConfig(parameter);
     }
 
     @Override
-    public void setConfig(String parameter, String value) throws RemoteException {
-
+    public String setConfig(String parameter, String value) throws RemoteException {
+        return ConfigHandler.writeConfig(parameter, value);
     }
 }
