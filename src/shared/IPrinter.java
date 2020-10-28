@@ -23,7 +23,7 @@ public interface IPrinter extends Remote {
     void restart() throws RemoteException; // stops the print server, clears the print queue and starts the print server again
 
     // prints status of printer on the user's display
-    String status() throws RemoteException;
+    String status(String printer) throws RemoteException;
 
     // prints the value of the parameter on the user's display
     String readConfig(String parameter) throws RemoteException;

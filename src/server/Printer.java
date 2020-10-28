@@ -46,37 +46,43 @@ public class Printer implements IPrinter {
 
     @Override
     public void print(String filename, String printer) throws RemoteException {
-
+        System.out.println("Client invoked method print for:");
+        System.out.println("Filename: " + filename);
+        System.out.println("Printer:" + printer);
     }
 
     @Override
     public List<Map<String, String>> queue(String printer) throws RemoteException {
+        System.out.println("Client invoked method queue for printer: " + printer);
         return null;
     }
 
     @Override
     public void topQueue(String printer, int job) throws RemoteException {
-
+        System.out.println("Client invoked method topQueue for:");
+        System.out.println("Printer: " + printer);
+        System.out.println("Job: " + job);
     }
 
     @Override
     public void start() throws RemoteException {
-
+        System.out.println("Client invoked method start");
     }
 
     @Override
     public void stop() throws RemoteException {
-
+        System.out.println("Client invoked method stop");
     }
 
     @Override
     public void restart() throws RemoteException {
-
+        System.out.println("Client invoked method restart");
     }
 
     @Override
-    public String status() throws RemoteException {
-        return null;
+    public String status(String printer) throws RemoteException {
+        System.out.println("Client invoked method status for printer " + printer);
+        return "Status for printer: " + printer + " - OK";
     }
 
     @Override
