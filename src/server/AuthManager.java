@@ -1,18 +1,20 @@
 package server;
 
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.KeySpec;
-import java.sql.*;
-import java.util.Arrays;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.UUID;
 
 public class AuthManager {
+
+    static HashMap<String, User> tokens = new HashMap<String, User>();
 
     public static void main(String[] args) {
         //addUser("Alice", "kodeord", 1);
@@ -34,7 +36,15 @@ public class AuthManager {
 
             Password hashedPassword = hashPassword(password, salt);
 
-            return hashedPassword.getPassword().equals(db_password);
+            if (hashedPassword.getPassword().equals(db_password)) {
+                User user = new User(
+                        resultSet.getString("username"),
+                        resultSet.getInt("role"),
+                        UUID.randomUUID().toString()
+                );
+
+                tokens.put(user.getToken(), user);
+            };
         } catch (SQLException e) {
             System.err.println("somethin very wong");
             System.out.println(e.getMessage());
