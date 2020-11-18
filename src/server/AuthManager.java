@@ -15,10 +15,11 @@ import java.util.Base64;
 public class AuthManager {
 
     public static void main(String[] args) {
-        addUser("Alice", "kodeord");
+        //addUser("Alice", "kodeord", 1);
+        System.out.println(login("Alice", "kodeord"));
     }
 
-    public boolean login(String username, String password) {
+    public static boolean login(String username, String password) {
         String statement = "SELECT * FROM users WHERE username=? LIMIT 1";
 
         try (Connection connection = DBManager.connect();
@@ -56,9 +57,6 @@ public class AuthManager {
 //    }
 
     private static Password hashPassword(String password) {
-        char[] passwordChars = password.toCharArray();
-        byte[] passwordBytes = password.getBytes();
-
         String hashed_password = null;
         String salt = null;
 
@@ -81,9 +79,6 @@ public class AuthManager {
     }
 
     private static Password hashPassword(String password, String salt) {
-        char[] passwordChars = password.toCharArray();
-        byte[] passwordBytes = password.getBytes();
-
         String hashed_password = null;
 
         try {
@@ -100,9 +95,9 @@ public class AuthManager {
         return new Password(hashed_password, salt);
     }
 
-    public static void addUser(String username, String password) {
+    public static void addUser(String username, String password, Integer role) {
         Password hashedPassword = hashPassword(password);
-        String statement = "INSERT INTO users(username, password, salt) VALUES(?,?,?)";
+        String statement = "INSERT INTO users(username, password, salt, role) VALUES(?,?,?,?)";
 
         try {
             Connection connection = DBManager.connect();
@@ -110,6 +105,7 @@ public class AuthManager {
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, hashedPassword.password);
             preparedStatement.setString(3, hashedPassword.salt);
+            preparedStatement.setInt(4, role);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
