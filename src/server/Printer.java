@@ -45,10 +45,18 @@ public class Printer implements IPrinter {
     }
 
     @Override
-    public void print(String filename, String printer) throws RemoteException {
+    public String login(String username, String password) throws RemoteException {
+        return AuthManager.login(username, password);
+    }
+
+    @Override
+    public void print(String filename, String printer, String token) throws RemoteException {
         System.out.println("Client invoked method print for:");
         System.out.println("Filename: " + filename);
         System.out.println("Printer:" + printer);
+        if (AuthManager.checkPermission("print", token)) {
+
+        }
     }
 
     @Override

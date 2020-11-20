@@ -21,7 +21,7 @@ public class AuthManager {
         System.out.println(login("Alice", "kodeord"));
     }
 
-    public static boolean login(String username, String password) {
+    public static String login(String username, String password) {
         String statement = "SELECT * FROM users WHERE username=? LIMIT 1";
 
         try (Connection connection = DBManager.connect();
@@ -44,13 +44,17 @@ public class AuthManager {
                 );
 
                 tokens.put(user.getToken(), user);
-            };
+
+                return user.getToken();
+            }
+
+            return null;
         } catch (SQLException e) {
             System.err.println("somethin very wong");
             System.out.println(e.getMessage());
         }
 
-        return false;
+        return null;
     }
 
 //    private static String hashPassword(String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -120,5 +124,19 @@ public class AuthManager {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static boolean checkPermission(String action, String token) {
+        int userRole = AuthManager.tokens.get(token).getRole();
+
+        if (action.equals("print")) {
+            return userRole == 1 || userRole == 2 || userRole == 3 || userRole == 4;
+        }
+
+        if (action.equals("start")) {
+            return userRole == 4;
+        }
+
+        return false;
     }
 }
