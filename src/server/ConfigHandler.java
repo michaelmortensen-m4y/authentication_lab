@@ -5,9 +5,7 @@ import java.util.Properties;
 
 public class ConfigHandler {
 
-    private static String fileName = "app.cfg";
-
-    public static String readConfig(String parameter) {
+    public static String readConfig(String fileName, String parameter) {
         Properties prop = new Properties();
         InputStream is = null;
 
@@ -27,7 +25,7 @@ public class ConfigHandler {
         return prop.getProperty(parameter);
     }
 
-    public static String writeConfig(String parameter, String value) {
+    public static String writeConfig(String fileName, String parameter, String value) {
         Properties prop = new Properties();
         InputStream is = null;
         OutputStream os = null;

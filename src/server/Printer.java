@@ -46,60 +46,99 @@ public class Printer implements IPrinter {
 
     @Override
     public String login(String username, String password) throws RemoteException {
+        System.out.println(username);
+        System.out.println(password);
         return AuthManager.login(username, password);
     }
 
     @Override
     public void print(String filename, String printer, String token) throws RemoteException {
         System.out.println("Client invoked method print for:");
-        System.out.println("Filename: " + filename);
-        System.out.println("Printer:" + printer);
         if (AuthManager.checkPermission("print", token)) {
-
+            System.out.println("Filename: " + filename);
+            System.out.println("Printer: " + printer);
+            return;
         }
+
+        System.out.println("Unauthorized attempt");
     }
 
     @Override
-    public List<Map<String, String>> queue(String printer) throws RemoteException {
+    public List<Map<String, String>> queue(String printer, String token) throws RemoteException {
         System.out.println("Client invoked method queue for printer: " + printer);
+        if (AuthManager.checkPermission("queue", token)) {
+            System.out.println("Queue for printer: " + printer);
+        }
+
+        System.out.println("Unauthorized attempt");
         return null;
     }
 
     @Override
-    public void topQueue(String printer, int job) throws RemoteException {
+    public void topQueue(String printer, int job, String token) throws RemoteException {
         System.out.println("Client invoked method topQueue for:");
         System.out.println("Printer: " + printer);
         System.out.println("Job: " + job);
     }
 
     @Override
-    public void start() throws RemoteException {
+    public void start(String token) throws RemoteException {
         System.out.println("Client invoked method start");
+        if (AuthManager.checkPermission("start", token)) {
+            System.out.println("Server started");
+        }
+
+        System.out.println("Unauthorized attempt");
     }
 
     @Override
-    public void stop() throws RemoteException {
+    public void stop(String token) throws RemoteException {
         System.out.println("Client invoked method stop");
+        if (AuthManager.checkPermission("stop", token)) {
+            System.out.println("Server started");
+        }
+
+        System.out.println("Unauthorized attempt");
     }
 
     @Override
-    public void restart() throws RemoteException {
+    public void restart(String token) throws RemoteException {
         System.out.println("Client invoked method restart");
+        if (AuthManager.checkPermission("restart", token)) {
+            System.out.println("Server started");
+        }
+
+        System.out.println("Unauthorized attempt");
     }
 
     @Override
-    public String status(String printer) throws RemoteException {
+    public String status(String printer, String token) throws RemoteException {
         System.out.println("Client invoked method status for printer " + printer);
-        return "Status for printer: " + printer + " - OK";
+        if (AuthManager.checkPermission("status", token)) {
+            return "Status for printer: " + printer + " - OK";
+        }
+
+        System.out.println("Unauthorized attempt");
+        return null;
     }
 
     @Override
-    public String readConfig(String parameter) throws RemoteException {
-        return ConfigHandler.readConfig(parameter);
+    public String readConfig(String parameter, String token) throws RemoteException {
+        if (AuthManager.checkPermission("readConfig", token)) {
+            return ConfigHandler.readConfig("app.cfg", parameter);
+        }
+
+        System.out.println("Unauthorized attempt");
+        return null;
     }
 
     @Override
-    public String setConfig(String parameter, String value) throws RemoteException {
-        return ConfigHandler.writeConfig(parameter, value);
+    public String setConfig(String parameter, String value, String token) throws RemoteException {
+        if (AuthManager.checkPermission("restart", token)) {
+            return ConfigHandler.writeConfig("app.cfg", parameter, value);
+        }
+
+        System.out.println("Unauthorized attempt");
+        return null;
     }
 }

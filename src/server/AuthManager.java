@@ -18,7 +18,8 @@ public class AuthManager {
 
     public static void main(String[] args) {
         //addUser("Alice", "kodeord", 1);
-        System.out.println(login("Alice", "kodeord"));
+        addUser("Bob", "kodeord", 10);
+        //System.out.println(login("Alice", "kodeord"));
     }
 
     public static String login(String username, String password) {
@@ -129,12 +130,12 @@ public class AuthManager {
     public static boolean checkPermission(String action, String token) {
         int userRole = AuthManager.tokens.get(token).getRole();
 
-        if (action.equals("print")) {
-            return userRole == 1 || userRole == 2 || userRole == 3 || userRole == 4;
-        }
+        String[] allowedRoles = ConfigHandler.readConfig("policies.cfg", action).split(",");
 
-        if (action.equals("start")) {
-            return userRole == 4;
+        for (String allowedRole : allowedRoles) {
+            if (allowedRole.equals(Integer.toString(userRole))) {
+                return true;
+            }
         }
 
         return false;
